@@ -271,14 +271,14 @@ obtain(obtains, (midi, { pixels, rainbow, Color }, { fileServer }, { wss }, fs, 
 
   wss.addListener('getConfiguration', (which, data, client)=> {
     //if (client === admin){
-    if (which == 'current') admin.sendPacket({
+    if (which == 'current') client.sendPacket({
       keyConfig: keyStyles,
       serverChords: chords,
     });
     else {
       let data = fs.readFileSync(configDir + '/' + which + '.json'); //file exists, get the contents
       var styles = JSON.parse(data);
-      admin.sendPacket({
+      client.sendPacket({
         keyConfig: styles.keys,
         serverChords: styles.chords,
       });
