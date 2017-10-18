@@ -7,11 +7,11 @@ exports.config = {
     },
     autostart: true,
     gitWatch: '/home/pi/midiLights',
-    softShutdown: {
+    /*softShutdown: {
       monitorPin: 24,
       controlPin: 25,
       delayTime: 1000,
-    },
+    },*/
     /*wifi: {
       ssid: 'SensorServer',
       password: 'defaultPass',
