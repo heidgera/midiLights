@@ -6,7 +6,9 @@ exports.config = {
       domainName: 'midilights.net',
     },
     autostart: true,
-    /*smoothShutdown: {
+    gitWatch: '/home/pi/midiLights',
+    /*softShutdown: {
+      pin: 25,
       delayTime: 1000,
     },
     wifi: {
