@@ -246,9 +246,10 @@ obtain(['µ/commandClient.js', 'µ/color.js', './src/keyboard.js'], ({ MuseContr
       e.preventDefault();
 
       var sKeys = keys.filter(val=>val.selected).map(val=>val.midiNum);
-      console.log(sKeys);
       var cfg = makeConfig(getNum(µ('#rangeStart')));
-      console.log(cfg);
+      chords.forEach((val, ind)=> {
+        if (val.keys.toString() == sKeys.toString()) currentChord = ind;
+      });
       if (currentChord > -1 && sKeys.toString() == chords[currentChord].keys.toString()) {
         chords[currentChord] = new Chord(sKeys, cfg);
       } else {
